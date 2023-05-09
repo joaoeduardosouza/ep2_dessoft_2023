@@ -163,31 +163,3 @@ for nome_navio, informacoes_navio in embarcacoes.items():
 
 tabuleiro_op = posiciona_frota(frota_oponente)
 tabuleiro_jog = posiciona_frota(frota)
-
-jogadas = []
-
-jogando = True
-while jogando:
-    print(monta_tabuleiros(tabuleiro_jog, tabuleiro_op))
-
-    #perguntar linha e validar
-    linha = int(input('Jogador, qual linha deseja atacar? '))
-    while linha > 9 or linha < 0:
-        print('Linha inválida!')
-        linha = int(input('Jogador, qual linha deseja atacar? '))
-    
-    #perguntar coluna e validar
-    coluna = int(input('Jogador, qual coluna deseja atacar? '))
-    while coluna > 9 or coluna < 0:
-        print('Coluna inválida!')
-        coluna = int(input('Jogador, qual coluna deseja atacar? '))
-    #se posição valida, faz jogada
-    if [linha, coluna] in jogadas:
-        print(f'A posição linha {linha} e coluna {coluna} já foi informada anteriormente')
-    else:
-        tabuleiro_op = faz_jogada(tabuleiro_op, linha, coluna)
-        jogadas.append([linha, coluna])
-    #se afundou todos os navios (funcao afundados) jogando = False e imprime mensagem
-        if afundados(frota_oponente, tabuleiro_op) == 10:
-            print('Parabéns! Você derrubou todos os navios do seu oponente!')
-            jogando = False
