@@ -191,3 +191,5 @@ while jogando:
         if afundados(frota_oponente, tabuleiro_op) == 10:
             print('Parabéns! Você derrubou todos os navios do seu oponente!')
             jogando = False
+
+        
