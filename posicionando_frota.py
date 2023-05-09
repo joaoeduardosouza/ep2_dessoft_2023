@@ -160,6 +160,4 @@ for nome_navio, informacoes_navio in embarcacoes.items():
                 orientacao = 'horizontal'
 
         frota = preenche_frota(frota, nome_navio, linha, coluna, orientacao, informacoes_navio['tamanho'])
-
-tabuleiro_op = posiciona_frota(frota_oponente)
-tabuleiro_jog = posiciona_frota(frota)
+print(frota)
